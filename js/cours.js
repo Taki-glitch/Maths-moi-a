@@ -3,22 +3,23 @@ function toggleCorrection() {
   corr.classList.toggle("hidden");
 }
 
+//Sommaire 
 document.addEventListener("DOMContentLoaded", () => {
-  const sommaire = document.getElementById("sommaire-list");
-  const titres = document.querySelectorAll("main h2, main h3");
+  const main = document.querySelector("main");
+  const sommaire = document.createElement("aside");
+  sommaire.className = "sommaire";
+  sommaire.innerHTML = "<h2>📑 Sommaire</h2><ul id='sommaire-list'></ul>";
+  main.prepend(sommaire);
 
-  titres.forEach((titre, index) => {
-    const id = "section-" + index;
+  const titres = main.querySelectorAll("h2, h3");
+  const list = document.getElementById("sommaire-list");
+
+  titres.forEach((titre, i) => {
+    const id = "section-" + i;
     titre.id = id;
-
     const li = document.createElement("li");
     li.className = titre.tagName === "H3" ? "h3" : "";
-
-    const a = document.createElement("a");
-    a.href = "#" + id;
-    a.textContent = titre.textContent;
-
-    li.appendChild(a);
-    sommaire.appendChild(li);
+    li.innerHTML = `<a href="#${id}">${titre.textContent}</a>`;
+    list.appendChild(li);
   });
 });
