@@ -5,6 +5,38 @@
   font-size: 0.9em;
 }
 
+/* ===== SOMMAIRE ===== */
+.sommaire {
+  background: #f1f5ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.sommaire ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sommaire li {
+  margin: 6px 0;
+}
+
+.sommaire a {
+  text-decoration: none;
+  color: #2c7be5;
+  font-size: 0.95em;
+}
+
+.sommaire a:hover {
+  text-decoration: underline;
+}
+
+.sommaire .h3 {
+  margin-left: 15px;
+  font-size: 0.9em;
+}
+
 /* ===== BLOCS ===== */
 .bloc {
   background: white;
