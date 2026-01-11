@@ -60,6 +60,16 @@ section {
   border-radius: 8px;
 }
 
+/* ===== RECHERCHE ===== */
+.search-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
