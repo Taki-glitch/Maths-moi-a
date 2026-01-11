@@ -1,1 +1,99 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>{{TITRE_CHAPITRE}} – {{NIVEAU}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/cours.css">
+</head>
+
+<body>
+
+<header>
+  <h1>{{EMOJI}} {{TITRE_CHAPITRE}}</h1>
+  <p>Niveau : {{NIVEAU}}</p>
+</header>
+
+<nav class="breadcrumb">
+  <a href="../../index.html">Accueil</a> →
+  <a href="../../niveaux/{{NIVEAU_LIEN}}.html">{{NIVEAU}}</a> →
+  {{TITRE_CHAPITRE}}
+</nav>
+
+<main>
+  <!-- ==== SOMMAIRE ==== -->
+  <aside id="sommaire" class="sommaire">
+    <h2>📑 Sommaire</h2>
+    <ul id="sommaire-list"></ul>
+  </aside>
+
+  <!-- ===== COURS ===== -->
+  <section class="bloc cours">
+    <h2>📘 Le cours</h2>
+
+    <h3>Définition</h3>
+    <p>
+      {{DEFINITION}}
+    </p>
+
+    <div class="math-box">
+      {{FORMULE_OU_PROPRIETE}}
+    </div>
+
+    <h3>Exemple</h3>
+    <p>
+      {{EXEMPLE}}
+    </p>
+  </section>
+
+  <!-- ===== EXERCICES ===== -->
+  <section class="bloc exercices">
+    <h2>✏️ Exercices</h2>
+
+    <ol>
+      {{EXERCICES}}
+    </ol>
+
+    <button class="btn" onclick="toggleCorrection()">
+      Voir / cacher le corrigé
+    </button>
+
+    <div id="correction" class="correction hidden">
+      <h3>✅ Corrigé</h3>
+      <ol>
+        {{CORRIGE}}
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== RÉVISER AUTREMENT ===== -->
+  <section class="bloc outils">
+    <h2>🧠 Réviser autrement</h2>
+
+    <div class="outils-grid">
+      <a class="outil-card" href="../../outils/qcm.html">📝 QCM</a>
+      <a class="outil-card" href="../../outils/flashcards.html">🗂 Flashcards</a>
+      <a class="outil-card disabled">🤖 Chatbot (bientôt)</a>
+    </div>
+  </section>
+
+</main>
+
+  <div class="retour-niveau">
+    <a href="../../niveaux/6e.html" class="btn-retour">
+      ← Retour au niveau ....
+    </a>
+  </div>
+
+  
+<footer>
+  <p>© 2026 – Maths pour tous</p>
+</footer>
+
+<script src="../../js/cours.js"></script>
+</body>
+</html>
