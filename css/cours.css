@@ -37,6 +37,25 @@
   font-size: 0.9em;
 }
 
+/* ===== RETOUR NIVEAU ===== */
+.retour-niveau {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.btn-retour {
+  background: #1e3a5f;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.btn-retour:hover {
+  background: #2c7be5;
+}
+
+
 /* ===== BLOCS ===== */
 .bloc {
   background: white;
