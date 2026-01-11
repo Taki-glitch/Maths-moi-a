@@ -1,3 +1,5 @@
+console.log("Site de maths chargé !");
+
 // Outil de recherches par chapitre
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search");
