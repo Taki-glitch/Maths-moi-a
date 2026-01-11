@@ -1,0 +1,77 @@
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+  padding: 10px 20px;
+  background: #eef2f7;
+  font-size: 0.9em;
+}
+
+/* ===== BLOCS ===== */
+.bloc {
+  background: white;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+/* ===== MATH BOX ===== */
+.math-box {
+  background: #f1f5ff;
+  padding: 15px;
+  border-left: 5px solid #2c7be5;
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+/* ===== BOUTON ===== */
+.btn {
+  background: #2c7be5;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.btn:hover {
+  background: #1e5fc7;
+}
+
+/* ===== CORRECTION ===== */
+.correction {
+  margin-top: 15px;
+  background: #e9ffe9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== OUTILS ===== */
+.outils-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.outil-card {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  background: #f5f7fa;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.outil-card:hover {
+  background: #dbe7ff;
+}
+
+.outil-card.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
