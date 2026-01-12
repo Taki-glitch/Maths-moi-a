@@ -47,3 +47,35 @@ site-maths/
 │   └── icons/
 │
 └── README.md
+
+site-maths/
+│
+├── index.html
+├── niveaux/
+│   ├── 6e.html         <-- page template pour 6e
+│   ├── 5e.html
+│   └── ...             <-- autres niveaux
+├── data/
+│   ├── 6e/
+│   │   ├── fractions.json
+│   │   ├── nombres.json
+│   │   └── geometrie.json
+│   ├── 5e/
+│   │   └── ...
+├── css/
+│   ├── style.css
+│   └── cours.css
+├── js/
+│   ├── niveau.js        <-- script commun pour tous les niveaux
+│   ├── flashcards.js
+│   ├── qcm.js
+│   └── sommaire.js
+└── assets/
+    └── images/
+
+
+
+
+
+
+
