@@ -8,10 +8,8 @@
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/cours.css">
 
-  <!-- MathJax pour LaTeX -->
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-
 <body>
 
 <header>
@@ -21,55 +19,38 @@
 
 <nav class="breadcrumb">
   <a href="../../index.html">Accueil</a> →
-  <a href="../../niveaux/index.html">Changer de niveau</a> →
   <a href="../../niveaux/6e.html">6e</a> →
   Fractions
 </nav>
 
 <main>
-
-  <!-- SOMMAIRE AUTO -->
-  <aside class="sommaire">
-    <h2>📑 Sommaire</h2>
-    <ul id="sommaire-list"></ul>
-  </aside>
-
-  <!-- COURS AUTO -->
-  <section class="bloc cours">
-    <h2>📘 Le cours</h2>
-    <div id="contenu-cours"></div>
+  <!-- Progression globale -->
+  <section class="progression">
+    <div class="barre"><div id="progression-fill"></div></div>
+    <p id="progression-texte"></p>
   </section>
 
-  <!-- EXERCICES -->
-  <section class="bloc exercices">
-    <h2>✏️ Exercices</h2>
-    <ol>
-      <li>Donner le numérateur et le dénominateur de 5 / 8.</li>
-      <li>Écrire la fraction correspondant à 2 parts sur 5.</li>
-    </ol>
+  <!-- Contenu dynamique -->
+  <section id="contenu-cours" class="bloc cours"></section>
+
+  <!-- Flashcards -->
+  <section id="flashcards">
+    <h2>🧠 Flashcards</h2>
   </section>
 
+  <!-- QCM -->
+  <section id="qcm">
+    <h2>📝 QCM</h2>
+  </section>
 </main>
-
-<div class="retour-niveau">
-  <a href="../../niveaux/6e.html" class="btn-retour">
-    ← Retour au niveau 6e
-  </a>
-</div>
 
 <footer>
   <p>© 2026 – Maths pour tous</p>
 </footer>
 
 <script src="../../js/cours.js"></script>
-
-<section class="bloc progression">
-  <h2>📊 Ma progression</h2>
-  <p id="progression-texte"></p>
-  <div class="progress-bar">
-    <div id="progression-fill"></div>
-  </div>
-</section>
+<script src="../../js/flashcards.js"></script>
+<script src="../../js/qcm.js"></script>
 
 </body>
 </html>
