@@ -64,6 +64,63 @@
   border-radius: 10px;
 }
 
+/* ===== BLOCS PEDAGOGIQUES ===== */
+
+.definition {
+  background: #e8f2ff;
+  border-left: 6px solid #1e6bd6;
+  padding: 12px 16px;
+  margin: 10px 0 20px;
+  border-radius: 6px;
+}
+
+.definition::before {
+  content: "📘 Définition";
+  display: block;
+  font-weight: bold;
+  color: #1e6bd6;
+  margin-bottom: 6px;
+}
+
+/* ---------------------------- */
+
+.propriete {
+  background: #ffecec;
+  border-left: 6px solid #c62828;
+  padding: 12px 16px;
+  margin: 10px 0 20px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.propriete::before {
+  content: "📌 Propriété / Théorème";
+  display: block;
+  font-weight: bold;
+  color: #c62828;
+  margin-bottom: 6px;
+}
+
+/* ---------------------------- */
+
+.exemple {
+  background: #f5f5f5;
+  border-left: 6px solid #999;
+  padding: 12px 16px;
+  margin: 10px 0 20px;
+  border-radius: 6px;
+  color: #333;
+}
+
+.exemple::before {
+  content: "✏️ Exemple";
+  display: block;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+
 /* ===== MATH BOX ===== */
 .math-box {
   background: #f1f5ff;
