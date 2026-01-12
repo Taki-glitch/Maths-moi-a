@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>{{TITRE_CHAPITRE}} – {{NIVEAU}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* ===== Styles spécifiques QCM & Flashcards ===== */
+    .qcm, .flashcards { margin-top: 20px; }
+    .qcm h2, .flashcards h2 { margin-bottom: 10px; }
+    .qcm button { margin-top: 10px; }
+    .flashcard { border: 1px solid #007c91; border-radius: 8px; padding: 15px; margin-bottom: 10px; cursor: pointer; background: #e0f7fa; }
+    .flashcard .reponse { display: none; color: #007c91; font-weight: bold; margin-top: 10px; }
+    .flashcard.show .reponse { display: block; }
+    .math-box { background: #e0f7fa; padding: 10px; margin: 10px 0; border-left: 4px solid #007c91; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📐 {{TITRE_CHAPITRE}}</h1>
+  <p>Niveau : {{NIVEAU}}</p>
+  <nav>
+    <a href="../../index.html">🏠 Accueil</a> →
+    <a href="../../niveaux/{{NIVEAU_LIEN}}.html">{{NIVEAU}}</a> →
+    {{TITRE_CHAPITRE}}
+  </nav>
+</header>
+
+<main>
+
+<!-- ===== Cours ===== -->
+<section class="cours">
+  <h2>📘 Le cours</h2>
+
+  <h3>Définition</h3>
+  <p>{{DEFINITION}}</p>
+
+  <h3>Propriété / Formule</h3>
+  <div class="math-box">
+    {{PROPRIETE}}
+  </div>
+
+  <h3>Exemple</h3>
+  <p>{{EXEMPLE}}</p>
+</section>
+
+<!-- ===== Exercices ===== -->
+<section class="exercices">
+  <h2>✏️ Exercices</h2>
+  <ol>
+    {{EXERCICES}}
+  </ol>
+
+  <button onclick="document.getElementById('correction').classList.toggle('hidden')">
+    Voir / cacher le corrigé
+  </button>
+
+  <div id="correction" class="correction hidden">
+    <h3>✅ Corrigé</h3>
+    <ol>
+      {{CORRIGE}}
+    </ol>
+  </div>
+</section>
+
+<!-- ===== QCM ===== -->
+<section class="qcm">
+  <h2>📝 QCM</h2>
+  <div id="qcm-container">
+    {{QCM}}
+  </div>
+  <button onclick="verifierQCM()">Vérifier mes réponses</button>
+  <p id="qcm-result"></p>
+</section>
+
+<!-- ===== Flashcards ===== -->
+<section class="flashcards">
+  <h2>🗂 Flashcards</h2>
+  {{FLASHCARDS}}
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 – Maths pour tous</p>
+</footer>
+
+<script>
+  // ===== QCM dynamique =====
+  function verifierQCM() {
+    let score = 0;
+    let total = 0;
+
+    const questions = document.querySelectorAll('.question');
+    questions.forEach((q) => {
+      total++;
+      const checked = q.querySelector('input[type="radio"]:checked');
+      if(checked && checked.value === "1") score++;
+    });
+
+    document.getElementById('qcm-result').textContent = `Votre score : ${score} / ${total}`;
+  }
+</script>
+
+</body>
+</html>
