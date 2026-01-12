@@ -1,33 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>6e – Maths pour tous</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/cours.css">
+<meta charset="UTF-8">
+<title>6e – Maths pour tous</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/cours.css">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
 <header>
-  <h1>📘 6e</h1>
-  <p>Choisis un chapitre pour commencer à réviser</p>
+  <h1>6e – Maths pour tous</h1>
 </header>
 
-<nav>
-  <a href="../index.html">← Accueil</a>
+<nav class="breadcrumb">
+  <a href="../index.html">Accueil</a> → 6e
 </nav>
 
 <main>
-  <section id="liste-chapitres">
-    <!-- Les chapitres seront remplis par le JS -->
+  <!-- Liste des chapitres -->
+  <section>
+    <h2>Chapitres</h2>
+    <ul id="liste-chapitres"></ul>
   </section>
+
+  <!-- Sommaire et contenu dynamique -->
+  <aside id="sommaire" class="sommaire">
+    <h2>📑 Sommaire</h2>
+    <ul id="sommaire-list"></ul>
+  </aside>
+
+  <section class="progression">
+    <div class="barre"><div id="progression-fill"></div></div>
+    <p id="progression-texte"></p>
+  </section>
+
+  <section id="contenu-cours" class="bloc cours"></section>
+  <section id="flashcards"><h2>🧠 Flashcards</h2></section>
+  <section id="qcm"><h2>📝 QCM</h2></section>
 </main>
 
-<script src="../js/niveau.js"></script>
+<div class="retour-niveau">
+  <a href="../index.html" class="btn-retour">← Retour à l'accueil</a>
+</div>
+
+<footer>
+  <p>© 2026 – Maths pour tous</p>
+</footer>
+
 <script>
-  // Charge les cours du niveau 6e
-  initNiveau('../data/6e/');
+  const niveau = "6e";
+  const chapitres = ["fractions","nombres","geometrie"];
+  const ul = document.getElementById("liste-chapitres");
+  chapitres.forEach(c => {
+    const li = document.createElement("li");
+    li.innerHTML = `<a href="../data/${niveau}/${c}.json">${c}</a>`;
+    ul.appendChild(li);
+  });
 </script>
+
+<script src="../js/niveau.js"></script>
+<script src="../js/flashcards.js"></script>
+<script src="../js/qcm.js"></script>
+<script src="../js/sommaire.js"></script>
+
 </body>
 </html>
