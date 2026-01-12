@@ -5,6 +5,15 @@
   <title>Fractions – 6ème</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* ===== Styles spécifiques QCM & Flashcards ===== */
+    .qcm, .flashcards { margin-top: 20px; }
+    .qcm h3, .flashcards h3 { margin-bottom: 10px; }
+    .qcm button { margin-top: 10px; }
+    .flashcard { border: 1px solid #007c91; border-radius: 8px; padding: 15px; margin-bottom: 10px; cursor: pointer; background: #e0f7fa; }
+    .flashcard .reponse { display: none; color: #007c91; font-weight: bold; margin-top: 10px; }
+    .flashcard.show .reponse { display: block; }
+  </style>
 </head>
 <body>
 
@@ -22,7 +31,6 @@
 
 <section class="cours">
   <h2>📘 Le cours</h2>
-
   <h3>Définition</h3>
   <p>Une fraction est un nombre qui représente une partie d’un tout. Elle est écrite sous la forme a/b où <strong>a</strong> est le numérateur et <strong>b</strong> le dénominateur.</p>
 
@@ -40,11 +48,9 @@
   <ol>
     <li>Écrire 3/5 sous forme équivalente avec le dénominateur 15.</li>
   </ol>
-
   <button onclick="document.getElementById('correction').classList.toggle('hidden')">
     Voir / cacher le corrigé
   </button>
-
   <div id="correction" class="correction hidden">
     <h3>✅ Corrigé</h3>
     <ol>
@@ -53,12 +59,38 @@
   </div>
 </section>
 
-<section class="outils">
-  <h2>🧠 Réviser autrement</h2>
-  <ul>
-    <li><a href="../../outils/qcm.html">QCM sur les fractions</a></li>
-    <li><a href="../../outils/flashcards.html">Flashcards sur les fractions</a></li>
-  </ul>
+<!-- ===== QCM intégré ===== -->
+<section class="qcm">
+  <h2>📝 QCM</h2>
+  <div id="qcm-container">
+    <div class="question">
+      <p>1️⃣ 1/2 est équivalent à :</p>
+      <label><input type="radio" name="q1" value="0"> 1/3</label><br>
+      <label><input type="radio" name="q1" value="1"> 2/4</label><br>
+      <label><input type="radio" name="q1" value="0"> 3/6</label>
+    </div>
+    <div class="question">
+      <p>2️⃣ 3/5 sous forme équivalente avec dénominateur 15 est :</p>
+      <label><input type="radio" name="q2" value="1"> 9/15</label><br>
+      <label><input type="radio" name="q2" value="0"> 6/15</label><br>
+      <label><input type="radio" name="q2" value="0"> 5/15</label>
+    </div>
+  </div>
+  <button onclick="verifierQCM()">Vérifier mes réponses</button>
+  <p id="qcm-result"></p>
+</section>
+
+<!-- ===== Flashcards intégré ===== -->
+<section class="flashcards">
+  <h2>🗂 Flashcards</h2>
+  <div class="flashcard" onclick="this.classList.toggle('show')">
+    <p>Qu’est-ce qu’une fraction ?</p>
+    <div class="reponse">Un nombre représentant une partie d’un tout, écrit a/b.</div>
+  </div>
+  <div class="flashcard" onclick="this.classList.toggle('show')">
+    <p>Comment savoir si deux fractions sont égales ?</p>
+    <div class="reponse">Si le produit en croix est égal : a×d = b×c</div>
+  </div>
 </section>
 
 </main>
@@ -67,6 +99,21 @@
   <p>© 2026 – Maths pour tous</p>
 </footer>
 
-<script src="../../js/main.js"></script>
+<script>
+  // QCM
+  function verifierQCM() {
+    let score = 0;
+    let total = 2; // nombre de questions
+
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q2 = document.querySelector('input[name="q2"]:checked');
+
+    if(q1 && q1.value === "1") score++;
+    if(q2 && q2.value === "1") score++;
+
+    document.getElementById('qcm-result').textContent = `Votre score : ${score} / ${total}`;
+  }
+</script>
+
 </body>
 </html>
