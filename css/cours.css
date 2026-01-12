@@ -64,6 +64,14 @@
   border-radius: 10px;
 }
 
+.bloc-peda.su {
+  box-shadow: inset 0 0 0 3px #4caf50;
+}
+
+.bloc-peda.revoir {
+  box-shadow: inset 0 0 0 3px #ff9800;
+}
+
 /* ===== BLOCS PEDAGOGIQUES ===== */
 
 .definition {
