@@ -1,15 +1,14 @@
-// Charge les derniers cours pour la page d'accueil
-const dernierCours = [
-  { titre: "Fractions", niveau: "6e", lien: "niveaux/6e.html" },
-  { titre: "Nombres entiers", niveau: "6e", lien: "niveaux/6e.html" },
-  { titre: "Pourcentages", niveau: "3e", lien: "niveaux/3e.html" }
-];
+document.addEventListener("DOMContentLoaded", ()=>{
+  const main = document.querySelector("main");
+  const sommaire = document.getElementById("sommaire-list");
+  const titres = main.querySelectorAll("h2,h3");
 
-const ul = document.getElementById('dernier-cours');
-if (ul) {
-  dernierCours.forEach(c => {
-    const li = document.createElement('li');
-    li.innerHTML = `<a href="${c.lien}">${c.titre} (${c.niveau})</a>`;
-    ul.appendChild(li);
+  titres.forEach((titre,i)=>{
+    const id = "section-"+i;
+    titre.id=id;
+    const li = document.createElement("li");
+    li.className = titre.tagName==="H3"?"h3":"";
+    li.innerHTML = `<a href="#${id}">${titre.textContent}</a>`;
+    sommaire.appendChild(li);
   });
-}
+});
