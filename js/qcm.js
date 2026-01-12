@@ -1,23 +1,28 @@
-// Exemple QCM simple
-const qcm = [
-  {
-    question: "Quel est le résultat de 1/2 + 1/4 ?",
-    options: ["1/4", "3/4", "2/3"],
-    reponse: "3/4"
-  }
-];
+document.addEventListener("DOMContentLoaded",()=>{
+  const container = document.getElementById("qcm");
+  const chapitre = "fractions";
 
-function showQCM() {
-  const container = document.getElementById('qcm-container');
-  container.innerHTML = '';
-  qcm.forEach((q, i) => {
-    const div = document.createElement('div');
-    div.innerHTML = `<p>${q.question}</p>` +
-      q.options.map(opt => `<button onclick="checkAnswer(${i}, '${opt}')">${opt}</button>`).join('');
-    container.appendChild(div);
-  });
-}
+  fetch(`../data/${niveau}/${chapitre}.json`)
+    .then(res=>res.json())
+    .then(data=>{
+      const qcms = data.contenu.filter(i=>i.type==="qcm");
 
-function checkAnswer(i, selected) {
-  alert(selected === qcm[i].reponse ? "✅ Correct" : "❌ Incorrect");
-}
+      qcms.forEach((qcm,index)=>{
+        const div = document.createElement("div");
+        div.className="bloc";
+
+        div.innerHTML = `<p><strong>${qcm.question}</strong></p>
+          ${qcm.choix.map((c,i)=>`<label><input type="radio" name="qcm${index}" value="${i}"> ${c}</label><br>`).join('')}
+          <button>Valider</button>
+          <p class="resultat"></p>
+        `;
+        div.querySelector("button").onclick=()=>{
+          const checked = div.querySelector("input:checked");
+          const res = div.querySelector(".resultat");
+          if(!checked) return;
+          res.textContent = checked.value==qcm.bonneReponse ? "✅ Bonne réponse" : "❌ Mauvaise réponse";
+        };
+        container.appendChild(div);
+      });
+    });
+});
