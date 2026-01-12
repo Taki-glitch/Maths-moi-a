@@ -1,36 +1,17 @@
-{
-  "niveau": "6e",
-  "chapitre": "fractions",
-  "titre": "Les fractions",
-  "contenu": [
-    {
-      "type": "definition",
-      "titre": "Fraction",
-      "texte": "Une fraction s’écrit sous la forme \\( \\frac{a}{b} \\) avec \\( b \\neq 0 \\)."
-    },
-    {
-      "type": "propriete",
-      "titre": "Produit par le dénominateur",
-      "texte": "\\( \\frac{a}{b} \\times b = a \\)"
-    },
-    {
-      "type": "exemple",
-      "titre": "Exemple simple",
-      "texte": "\\( \\frac{3}{4} \\times 4 = 3 \\)"
-    },
-    {
-      "type": "qcm",
-      "question": "Combien font \\( \\frac{3}{4} \\times 4 \\) ?",
-      "choix": ["3", "4", "1"],
-      "bonneReponse": 0,
-      "lien": "qcm1"
-    },
-    {
-      "type": "qcm",
-      "question": "Quelle est la fraction de 2 parts sur 5 ?",
-      "choix": ["2/5", "5/2", "1/2"],
-      "bonneReponse": 0,
-      "lien": "qcm2"
-    }
-  ]
-}
+[
+  {
+    "titre": "Fractions",
+    "emoji": "➗",
+    "definition": "Une fraction représente une partie d'un tout. Elle s'écrit sous la forme a/b où b ≠ 0.",
+    "formule": "a/b = a ÷ b",
+    "exemple": "Si une pizza est coupée en 8 parts et que tu en manges 3, tu as mangé 3/8 de la pizza.",
+    "exercices": [
+      "Écris la fraction correspondant à 5 parts sur 12.",
+      "Simplifie la fraction 8/12."
+    ],
+    "corrige": [
+      "5/12",
+      "8/12 = 2/3"
+    ]
+  }
+]
