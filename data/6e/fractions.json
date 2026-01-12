@@ -1,17 +1,25 @@
-[
-  {
-    "titre": "Fractions",
-    "emoji": "➗",
-    "definition": "Une fraction représente une partie d'un tout. Elle s'écrit sous la forme a/b où b ≠ 0.",
-    "formule": "a/b = a ÷ b",
-    "exemple": "Si une pizza est coupée en 8 parts et que tu en manges 3, tu as mangé 3/8 de la pizza.",
-    "exercices": [
-      "Écris la fraction correspondant à 5 parts sur 12.",
-      "Simplifie la fraction 8/12."
-    ],
-    "corrige": [
-      "5/12",
-      "8/12 = 2/3"
-    ]
-  }
-]
+{
+  "titre": "Fractions",
+  "emoji": "➗",
+  "niveau": "6e",
+  "contenu": [
+    {
+      "type": "definition",
+      "texte": "Une fraction s'écrit sous la forme a/b."
+    },
+    {
+      "type": "propriete",
+      "texte": "a/b × b = a"
+    },
+    {
+      "type": "exemple",
+      "texte": "3/4 × 4 = 3"
+    },
+    {
+      "type": "qcm",
+      "question": "Que vaut 2/5 × 5 ?",
+      "choix": ["2","5","1","10"],
+      "bonneReponse": 0
+    }
+  ]
+}
