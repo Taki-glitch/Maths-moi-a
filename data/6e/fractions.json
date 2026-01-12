@@ -17,6 +17,12 @@
     {
       "type": "exemple",
       "texte": "\\( \\frac{3}{4} \\times 4 = 3 \\)"
+    },
+    {
+      "type": "qcm",
+      "question": "Que vaut \\( \\frac{3}{4} \\times 4 \\) ?",
+      "choix": ["3", "4", "12"],
+      "bonneReponse": 0
     }
   ]
 }
