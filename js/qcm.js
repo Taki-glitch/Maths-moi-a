@@ -1,52 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("../../data/6e/fractions.json")
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById("qcm");
-      const progression = JSON.parse(localStorage.getItem("progression-6e")) || {};
+// Exemple QCM simple
+const qcm = [
+  {
+    question: "Quel est le résultat de 1/2 + 1/4 ?",
+    options: ["1/4", "3/4", "2/3"],
+    reponse: "3/4"
+  }
+];
 
-      const qcms = data.contenu.filter(i => i.type === "qcm");
+function showQCM() {
+  const container = document.getElementById('qcm-container');
+  container.innerHTML = '';
+  qcm.forEach((q, i) => {
+    const div = document.createElement('div');
+    div.innerHTML = `<p>${q.question}</p>` +
+      q.options.map(opt => `<button onclick="checkAnswer(${i}, '${opt}')">${opt}</button>`).join('');
+    container.appendChild(div);
+  });
+}
 
-      qcms.forEach((qcm, index) => {
-        const statut = progression?.fractions?.[qcm.lien];
-        if (statut === "su") return;
-
-        const div = document.createElement("div");
-        div.className = "bloc qcm-bloc";
-
-        div.innerHTML = `
-          <p><strong>${qcm.question}</strong></p>
-          ${qcm.choix.map((c,i) => `
-            <label>
-              <input type="radio" name="qcm${index}" value="${i}">
-              ${c}
-            </label><br>
-          `).join("")}
-          <button>Valider</button>
-          <p class="resultat"></p>
-        `;
-
-        div.querySelector("button").onclick = () => {
-          const checked = div.querySelector("input:checked");
-          const res = div.querySelector(".resultat");
-          if (!checked) return;
-
-          const correct = checked.value == qcm.bonneReponse;
-          res.textContent = correct ? "✅ Bonne réponse" : "❌ Mauvaise réponse";
-
-          // Met à jour progression
-          const prog = JSON.parse(localStorage.getItem("progression-6e")) || {};
-          if (!prog.fractions) prog.fractions = {};
-          prog.fractions[qcm.lien] = correct ? "su" : "revoir";
-          localStorage.setItem("progression-6e", JSON.stringify(prog));
-
-          // Update barre de progression
-          if (window.updateProgression) updateProgression();
-        };
-
-        container.appendChild(div);
-      });
-
-      if (window.MathJax) MathJax.typeset();
-    });
-});
+function checkAnswer(i, selected) {
+  alert(selected === qcm[i].reponse ? "✅ Correct" : "❌ Incorrect");
+}
