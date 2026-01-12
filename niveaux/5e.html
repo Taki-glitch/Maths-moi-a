@@ -2,96 +2,31 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mathématiques – 5e</title>
+  <title>5e – Maths pour tous</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cours.css">
 </head>
 <body>
 
 <header>
-  <h1>📘 Mathématiques – 5e</h1>
-  <p>Choisis un chapitre à réviser</p>
+  <h1>📘 5e</h1>
+  <p>Choisis un chapitre pour commencer à réviser</p>
 </header>
 
 <nav>
-  <a href="../index.html">← Retour à l’accueil</a>
-  <a href="../../niveaux/index.html">← Changer de niveau</a>
+  <a href="../index.html">← Accueil</a>
 </nav>
 
 <main>
-
-  <!-- ===== RECHERCHE ===== -->
-  <input
-    type="text"
-    id="search"
-    placeholder="🔍 Rechercher un chapitre..."
-    class="search-input"
-  />
-
-  <!-- ===== NOMBRES ===== -->
-  <section>
-    <h2>🔢 Nombres et calculs</h2>
-    <ul>
-      <li>
-        <a href="../cours/5e/fractions.html">
-          ➗ Fractions
-        </a>
-      </li>
-      <li>
-        <a href="../cours/5e/puissances.html">
-          🔺 Puissances
-        </a>
-      </li>
-    </ul>
+  <section id="liste-chapitres">
+    <!-- Les chapitres seront remplis par le JS -->
   </section>
-
-  <!-- ===== GEOMETRIE ===== -->
-  <section>
-    <h2>📐 Géométrie</h2>
-    <ul>
-      <li>
-        <a href="../cours/5e/triangles.html">
-          📐 Triangles
-        </a>
-      </li>
-      <li>
-        <a href="../cours/5e/symetrie.html">
-          🔁 Symétrie axiale
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- ===== GRANDEURS ===== -->
-  <section>
-    <h2>📏 Grandeurs et mesures</h2>
-    <ul>
-      <li>
-        <a href="../cours/5e/aires-volumes.html">
-          📦 Aires et volumes
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- ===== DONNEES ===== -->
-  <section>
-    <h2>📊 Organisation et gestion de données</h2>
-    <ul>
-      <li>
-        <a href="../cours/5e/statistiques.html">
-          📊 Statistiques
-        </a>
-      </li>
-    </ul>
-  </section>
-
 </main>
 
-<footer>
-  <p>© 2026 – Maths pour tous</p>
-</footer>
-
-<script src="../js/main.js"></script>
+<script src="../js/niveau.js"></script>
+<script>
+  initNiveau('../data/5e/');
+</script>
 </body>
 </html>
