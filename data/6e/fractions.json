@@ -1,0 +1,22 @@
+{
+  "titre": "Les fractions",
+  "niveau": "6e",
+  "contenu": [
+    {
+      "type": "definition",
+      "texte": "Une fraction s’écrit sous la forme \\( \\frac{a}{b} \\)",
+      "flashcard": {
+        "question": "Comment s’écrit une fraction ?",
+        "reponse": "\\( \\frac{a}{b} \\)"
+      }
+    },
+    {
+      "type": "propriete",
+      "texte": "Si \\( b \\neq 0 \\), alors :<br>\\( \\frac{a}{b} \\times b = a \\)"
+    },
+    {
+      "type": "exemple",
+      "texte": "\\( \\frac{3}{4} \\times 4 = 3 \\)"
+    }
+  ]
+}
