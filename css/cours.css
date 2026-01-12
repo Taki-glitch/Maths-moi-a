@@ -239,3 +239,18 @@
   display: none;
 }
 
+/* ==== QCM ==== */
+.progress-bar {
+  background: #ddd;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progression-fill {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.3s;
+}
+
