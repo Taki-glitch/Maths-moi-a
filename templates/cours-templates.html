@@ -8,10 +8,8 @@
   <!-- Styles -->
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/cours.css">
-
-  <!-- MathJax -->
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
 
 <header>
@@ -26,48 +24,64 @@
 </nav>
 
 <main>
-  <!-- Sommaire -->
-  <aside id="sommaire" class="sommaire">
-    <h2>📑 Sommaire</h2>
-    <ul id="sommaire-list"></ul>
-  </aside>
 
-  <!-- Progression globale -->
-  <section class="progression">
-    <div class="barre"><div id="progression-fill"></div></div>
-    <p id="progression-texte"></p>
+  <!-- ===== COURS ===== -->
+  <section class="bloc cours">
+    <h2>📘 Le cours</h2>
+
+    <h3>Définition</h3>
+    <p>{{DEFINITION}}</p>
+
+    <h3>Formule / Propriété</h3>
+    <div class="math-box">{{FORMULE_OU_PROPRIETE}}</div>
+
+    <h3>Exemple</h3>
+    <p>{{EXEMPLE}}</p>
   </section>
 
-  <!-- Contenu dynamique -->
-  <section id="contenu-cours" class="bloc cours"></section>
+  <!-- ===== EXERCICES ===== -->
+  <section class="bloc exercices">
+    <h2>✏️ Exercices</h2>
+    <ol>
+      {{EXERCICES}}
+    </ol>
 
-  <!-- Flashcards -->
-  <section id="flashcards">
-    <h2>🧠 Flashcards</h2>
+    <button class="btn" onclick="toggleCorrection()">
+      Voir / cacher le corrigé
+    </button>
+
+    <div id="correction" class="correction hidden">
+      <h3>✅ Corrigé</h3>
+      <ol>
+        {{CORRIGE}}
+      </ol>
+    </div>
   </section>
 
-  <!-- QCM -->
-  <section id="qcm">
-    <h2>📝 QCM</h2>
+  <!-- ===== RÉVISER AUTREMENT ===== -->
+  <section class="bloc outils">
+    <h2>🧠 Réviser autrement</h2>
+
+    <div class="outils-grid">
+      <a class="outil-card" href="../../outils/qcm.html">📝 QCM</a>
+      <a class="outil-card" href="../../outils/flashcards.html">🗂 Flashcards</a>
+      <a class="outil-card disabled">🤖 Chatbot (bientôt)</a>
+    </div>
   </section>
+
 </main>
-
-<!-- Bouton retour -->
-<div class="retour-niveau">
-  <a href="../../niveaux/{{NIVEAU_LIEN}}.html" class="btn-retour">
-    ← Retour au niveau {{NIVEAU}}
-  </a>
-</div>
 
 <footer>
   <p>© 2026 – Maths pour tous</p>
 </footer>
 
-<!-- Scripts dynamiques -->
-<script src="../../js/cours.js"></script>
-<script src="../../js/flashcards.js"></script>
-<script src="../../js/qcm.js"></script>
-<script src="../../js/sommaire.js"></script>
+<script>
+  // Afficher / masquer le corrigé
+  function toggleCorrection() {
+    const corr = document.getElementById('correction');
+    corr.classList.toggle('hidden');
+  }
+</script>
 
 </body>
 </html>
