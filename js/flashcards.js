@@ -1,30 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("../../data/6e/fractions.json")
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById("flashcards");
+// Exemple de structure minimaliste de flashcards
+const flashcards = [
+  { question: "3/4 + 1/4 = ?", reponse: "1" },
+  { question: "5/8 simplifié ?", reponse: "5/8" }
+];
 
-      data.contenu
-        .filter(i => ["definition", "propriete"].includes(i.type))
-        .forEach(item => {
-          const card = document.createElement("div");
-          card.className = "flashcard";
+let index = 0;
+function showCard() {
+  const card = flashcards[index];
+  document.getElementById('question').textContent = card.question;
+  document.getElementById('reponse').textContent = '';
+}
 
-          card.innerHTML = `
-            <div class="question">${item.titre}</div>
-            <div class="reponse hidden">${item.texte}</div>
-            <button class="btn-flip">Voir la réponse</button>
-          `;
+function showAnswer() {
+  document.getElementById('reponse').textContent = flashcards[index].reponse;
+}
 
-          container.appendChild(card);
-        });
-
-      if (window.MathJax) MathJax.typeset();
-    });
-
-  document.addEventListener("click", e => {
-    if (!e.target.classList.contains("btn-flip")) return;
-    const card = e.target.closest(".flashcard");
-    card.querySelector(".reponse").classList.toggle("hidden");
-  });
-});
+function nextCard() {
+  index = (index + 1) % flashcards.length;
+  showCard();
+}
