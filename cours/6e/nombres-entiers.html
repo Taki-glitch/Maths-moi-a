@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nombres entiers – 6ème</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header>
+  <h1>🔢 Nombres entiers</h1>
+  <p>Niveau : 6ème</p>
+  <nav class="breadcrumb">
+    <a href="../../index.html">🏠 Accueil</a> →
+    <a href="../../niveaux/6e.html">6ème</a> →
+    Nombres entiers
+  </nav>
+</header>
+<main>
+<section class="bloc cours">
+  <div class="definition">Les nombres entiers sont les nombres positifs, négatifs et zéro, sans virgule ni fraction.</div>
+  <div class="propriete">L’addition et la multiplication de nombres entiers obéissent aux règles de signe : +×+ = +, +×- = -, etc.</div>
+  <div class="exemple">3 + (-5) = -2 ; (-4) × 2 = -8</div>
+</section>
+
+<section class="bloc exercices">
+  <ol>
+    <li>Calculer : 7 + (-3)</li>
+    <li>Calculer : (-5) × 6</li>
+  </ol>
+  <button class="btn" onclick="document.getElementById('correction').classList.toggle('hidden')">Voir / cacher le corrigé</button>
+  <div id="correction" class="correction hidden">
+    <ol>
+      <li>7 + (-3) = 4</li>
+      <li>(-5) × 6 = -30</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bloc qcm">
+  <h2>📝 QCM</h2>
+  <div class="question">
+    <p>1️⃣ -3 + 7 = ?</p>
+    <label><input type="radio" name="q1" value="1"> 4</label><br>
+    <label><input type="radio" name="q1" value="0"> -4</label><br>
+    <label><input type="radio" name="q1" value="0"> 10</label>
+  </div>
+  <div class="question">
+    <p>2️⃣ (-2) × (-5) = ?</p>
+    <label><input type="radio" name="q2" value="1"> 10</label><br>
+    <label><input type="radio" name="q2" value="0"> -10</label><br>
+    <label><input type="radio" name="q2" value="0"> 7</label>
+  </div>
+  <button class="btn" onclick="verifierQCM()">Vérifier mes réponses</button>
+  <p id="qcm-result"></p>
+</section>
+
+<section class="bloc flashcards">
+  <div class="flashcard" onclick="this.classList.toggle('show')">
+    <p>Qu’est-ce qu’un nombre entier ?</p>
+    <div class="reponse">Un nombre sans virgule, positif, négatif ou zéro.</div>
+  </div>
+  <div class="flashcard" onclick="this.classList.toggle('show')">
+    <p>Quel est le résultat de (-3) + 5 ?</p>
+    <div class="reponse">2</div>
+  </div>
+</section>
+</main>
+<footer>
+  <p>© 2026 – Maths pour tous</p>
+</footer>
+<script>
+function verifierQCM(){
+let score=0,total=0;
+document.querySelectorAll('.question').forEach(q=>{total++;const c=q.querySelector('input[type="radio"]:checked');if(c&&c.value==="1")score++;});
+document.getElementById('qcm-result').textContent=`Votre score : ${score} / ${total}`;
+}
+</script>
+</body>
+</html>
