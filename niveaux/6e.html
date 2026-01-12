@@ -2,80 +2,32 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mathématiques – 6e</title>
+  <title>6e – Maths pour tous</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cours.css">
 </head>
 <body>
 
 <header>
-  <h1>📘 Mathématiques – 6e</h1>
-  <p>Choisis un chapitre à réviser</p>
+  <h1>📘 6e</h1>
+  <p>Choisis un chapitre pour commencer à réviser</p>
 </header>
 
 <nav>
-  <a href="../index.html">← Retour à l’accueil</a>
-  <a href="../../niveaux/index.html">← Changer de niveau</a>
+  <a href="../index.html">← Accueil</a>
 </nav>
 
 <main>
-
-  <!-- ==== RECHERCHE ==== -->
-  <input
-    type="text"
-    id="search"
-    placeholder="🔍 Rechercher un chapitre..."
-    class="search-input"
-  />
-  
-  <!-- ===== NOMBRES ===== -->
-  <section>
-    <h2>🔢 Nombres et calculs</h2>
-    <ul>
-      <li>
-        <a href="../cours/6e/nombres-entiers.html">
-          🔢 Nombres entiers
-        </a>
-      </li>
-      <li>
-        <a href="../cours/6e/fractions.html">
-          ➗ Fractions
-        </a>
-      </li>
-    </ul>
+  <section id="liste-chapitres">
+    <!-- Les chapitres seront remplis par le JS -->
   </section>
-
-  <!-- ===== GEOMETRIE ===== -->
-  <section>
-    <h2>📐 Géométrie</h2>
-    <ul>
-      <li>
-        <a href="../cours/6e/geometrie.html">
-          📐 Géométrie (figures)
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <!-- ===== GRANDEURS ===== -->
-  <section>
-    <h2>📏 Grandeurs et mesures</h2>
-    <ul>
-      <li>
-        <a href="../cours/6e/aires-perimetres.html">
-          📏 Aires et périmètres
-        </a>
-      </li>
-    </ul>
-  </section>
-
 </main>
 
-<footer>
-  <p>© 2026 – Maths pour tous</p>
-</footer>
-
-<script src="../js/main.js"></script>
-  
+<script src="../js/niveau.js"></script>
+<script>
+  // Charge les cours du niveau 6e
+  initNiveau('../data/6e/');
+</script>
 </body>
 </html>
