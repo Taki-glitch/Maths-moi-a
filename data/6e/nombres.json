@@ -1,0 +1,17 @@
+[
+  {
+    "titre": "Nombres entiers et décimaux",
+    "emoji": "🔢",
+    "definition": "Les nombres entiers sont ... Les nombres décimaux sont ...",
+    "formule": "",
+    "exemple": "Exemple : 3, 7, 12, 0, -5 sont des entiers.",
+    "exercices": [
+      "Écris tous les entiers entre -3 et 4.",
+      "Écris le nombre 0,75 sous forme fractionnaire."
+    ],
+    "corrige": [
+      "-3, -2, -1, 0, 1, 2, 3, 4",
+      "0,75 = 3/4"
+    ]
+  }
+]
