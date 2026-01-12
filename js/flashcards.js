@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("flashcards");
 
       data.contenu
-        .filter(item => ["definition", "propriete"].includes(item.type))
+        .filter(i => ["definition", "propriete"].includes(i.type))
         .forEach(item => {
           const card = document.createElement("div");
           card.className = "flashcard";
