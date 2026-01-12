@@ -1,21 +1,20 @@
-// Exemple de structure minimaliste de flashcards
-const flashcards = [
-  { question: "3/4 + 1/4 = ?", reponse: "1" },
-  { question: "5/8 simplifié ?", reponse: "5/8" }
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("flashcards");
+  const chapitre = "fractions";
 
-let index = 0;
-function showCard() {
-  const card = flashcards[index];
-  document.getElementById('question').textContent = card.question;
-  document.getElementById('reponse').textContent = '';
-}
+  fetch(`../data/${niveau}/${chapitre}.json`)
+    .then(res=>res.json())
+    .then(data=>{
+      data.contenu.forEach((item,i)=>{
+        if(!["definition","propriete"].includes(item.type)) return;
 
-function showAnswer() {
-  document.getElementById('reponse').textContent = flashcards[index].reponse;
-}
-
-function nextCard() {
-  index = (index + 1) % flashcards.length;
-  showCard();
-}
+        const card = document.createElement("div");
+        card.className = "flashcard";
+        card.innerHTML = `
+          <div class="front">${item.texte}</div>
+          <div class="back">Réponse / Exemple</div>
+        `;
+        container.appendChild(card);
+      });
+    });
+});
