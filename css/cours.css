@@ -94,7 +94,7 @@
 }
 
 .propriete::before {
-  content: "📌 Propriété / Théorème";
+  content: "📌 Propriété";
   display: block;
   font-weight: bold;
   color: #c62828;
@@ -120,6 +120,29 @@
   margin-bottom: 6px;
 }
 
+/* Boutons */
+.actions {
+  margin-top: 10px;
+}
+
+.btn-savoir,
+.btn-revoir {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-savoir {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-revoir {
+  background: #ff9800;
+  color: white;
+}
 
 /* ===== MATH BOX ===== */
 .math-box {
