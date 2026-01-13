@@ -1,69 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Proportionnalité – 6ème</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../../css/style.css">
+  <meta charset="UTF-8">
+  <title>6e – Proportionnalité</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
 <header>
-<h1>📊 Proportionnalité</h1>
-<p>Niveau : 6ème</p>
-<nav class="breadcrumb">
-<a href="../../index.html">🏠 Accueil</a> →
-<a href="../../niveaux/6e.html">6ème</a> →
-Proportionnalité
-</nav>
+  <h1>Proportionnalité – 6e</h1>
 </header>
+
 <main>
 
-<section class="bloc cours">
-<div class="definition">Deux grandeurs sont proportionnelles si on peut multiplier/diviser l’une par un même nombre pour obtenir l’autre.</div>
-<div class="propriete">Tableau de proportionnalité : on peut calculer une valeur manquante en utilisant le produit en croix.</div>
-<div class="exemple">Si 2 kg de pommes coûtent 6 €, 5 kg coûtent ? → 5×6 ÷2 = 15 €</div>
+<section class="bloc">
+  <div class="definition">
+    Deux grandeurs sont proportionnelles si on peut passer de l’une à l’autre
+    en multipliant toujours par le même nombre.
+  </div>
+
+  <div class="exemple">
+    1 stylo coûte 2 € → 3 stylos coûtent 6 €
+  </div>
 </section>
 
-<section class="bloc exercices">
-<ol>
-<li>Compléter le tableau : 3 L → 9 €, 7 L → ?</li>
-<li>Calculer le prix de 12 bonbons si 5 coûtent 2 €.</li>
-</ol>
-<button class="btn" onclick="document.getElementById('correction').classList.toggle('hidden')">Voir / cacher le corrigé</button>
-<div id="correction" class="correction hidden">
-<ol>
-<li>21 €</li>
-<li>4,8 €</li>
-</ol>
-</div>
+<section class="bloc qcm" data-id="proportion-qcm">
+  <h2>QCM</h2>
+
+  <p class="question">Si 2 kg coûtent 6 €, combien coûtent 5 kg ?</p>
+  <label><input type="radio" name="q1" data-correct="true"> 15 €</label><br>
+  <label><input type="radio" name="q1"> 12 €</label>
+
+  <button class="btn check-qcm">Valider</button>
+  <p class="result"></p>
 </section>
 
-<section class="bloc qcm">
-<div class="question">
-<p>1️⃣ Si 4 kg coûtent 12 €, combien coûtent 1 kg ?</p>
-<label><input type="radio" name="q1" value="1"> 3 €</label><br>
-<label><input type="radio" name="q1" value="0"> 4 €</label>
-</div>
-<div class="question">
-<p>2️⃣ 5 km parcourus en 10 min, 8 km en ?</p>
-<label><input type="radio" name="q2" value="1"> 16 min</label><br>
-<label><input type="radio" name="q2" value="0"> 14 min</label>
-</div>
-<button class="btn" onclick="verifierQCM()">Vérifier mes réponses</button>
-<p id="qcm-result"></p>
-</section>
+<section class="bloc">
+  <h2>Flashcards</h2>
 
-<section class="bloc flashcards">
-<div class="flashcard" onclick="this.classList.toggle('show')">
-<p>Qu’est-ce que la proportionnalité ?</p>
-<div class="reponse">Quand deux grandeurs varient selon un même coefficient multiplicatif.</div>
-</div>
+  <div class="flashcard">
+    <div class="question">Outil graphique pour la proportionnalité ?</div>
+    <div class="reponse">Tableau de proportionnalité</div>
+  </div>
+
+  <div class="flashcard">
+    <div class="question">Le graphique est une droite passant par…</div>
+    <div class="reponse">l’origine</div>
+  </div>
 </section>
 
 </main>
-<footer><p>© 2026 – Maths pour tous</p></footer>
-<script>
-function verifierQCM(){let score=0,total=0;document.querySelectorAll('.question').forEach(q=>{total++;const c=q.querySelector('input[type="radio"]:checked');if(c&&c.value==="1")score++;});document.getElementById('qcm-result').textContent=`Votre score : ${score} / ${total}`;}
-</script>
+
+<script src="../chapitre.js"></script>
 </body>
 </html>
