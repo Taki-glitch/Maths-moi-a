@@ -4,118 +4,141 @@
   <meta charset="UTF-8">
   <title>Fractions – 6ème</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../css/style.css">
-  <style>
-    /* ===== QCM ===== */
-    .qcm .question { margin-bottom: 15px; }
-    .qcm input[type="radio"] { margin-right: 6px; }
 
-    /* ===== Flashcards ===== */
-    .flashcard {
-      border: 1px solid #2c7be5;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      background: #e0f7fa;
-      transition: transform 0.2s;
-    }
-    .flashcard:hover { transform: scale(1.02); }
-    .flashcard .reponse { display: none; font-weight: bold; color: #2c7be5; margin-top: 10px; }
-    .flashcard.show .reponse { display: block; }
-  </style>
+  <!-- Styles globaux -->
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
+
 <body>
 
 <header>
-  <h1>📐 Fractions</h1>
+  <h1>➗ Fractions</h1>
   <p>Niveau : 6ème</p>
-  <nav class="breadcrumb">
-    <a href="../../index.html">🏠 Accueil</a> →
-    <a href="../../niveaux/6e.html">6ème</a> →
-    Fractions
-  </nav>
 </header>
+
+<nav class="breadcrumb">
+  <a href="../../index.html">Accueil</a> →
+  <a href="../../niveaux/6e.html">6ème</a> →
+  Fractions
+</nav>
 
 <main>
 
+<!-- ================= COURS ================= -->
 <section class="bloc cours">
-  <h2>📘 Le cours</h2>
 
   <div class="definition">
-    Une fraction est un nombre qui représente une partie d’un tout. Elle est écrite sous la forme a/b où <strong>a</strong> est le numérateur et <strong>b</strong> le dénominateur.
+    Une fraction représente une partie d’un tout.
+    <br>
+    Elle est composée d’un numérateur (en haut) et d’un dénominateur (en bas).
   </div>
 
   <div class="propriete">
-    Deux fractions a/b et c/d sont égales si et seulement si a×d = b×c
+    Le dénominateur indique en combien de parts égales le tout est partagé.
   </div>
 
   <div class="exemple">
-    1/2 = 2/4 car 1×4 = 2×2
+    Dans la fraction <strong>3/4</strong>, on a pris 3 parts sur 4 parts égales.
   </div>
+
 </section>
 
+<!-- ================= EXERCICES ================= -->
 <section class="bloc exercices">
+
   <h2>✏️ Exercices</h2>
+
   <ol>
-    <li>Écrire 3/5 sous forme équivalente avec le dénominateur 15.</li>
-    <li>Comparer 2/3 et 3/4 en utilisant le produit en croix.</li>
+    <li>Écrire la fraction correspondant à 2 parts sur 5.</li>
+    <li>Dans 7/9, quel est le numérateur ? Le dénominateur ?</li>
   </ol>
 
-  <button class="btn" onclick="document.getElementById('correction').classList.toggle('hidden')">
-    Voir / cacher le corrigé
-  </button>
+  <button class="btn" onclick="toggleCorrection()">Voir / cacher le corrigé</button>
 
   <div id="correction" class="correction hidden">
-    <h3>✅ Corrigé</h3>
     <ol>
-      <li>3/5 = 9/15</li>
-      <li>2×4 = 8 et 3×3 = 9 → 2/3 &lt; 3/4</li>
+      <li>2/5</li>
+      <li>Numérateur : 7 – Dénominateur : 9</li>
     </ol>
   </div>
+
 </section>
 
+<!-- ================= QCM ================= -->
 <section class="bloc qcm">
-  <h2>📝 QCM</h2>
+
+  <h2>📝 QCM – Les fractions</h2>
+
   <div class="question">
-    <p>1️⃣ 1/2 est équivalent à :</p>
-    <label><input type="radio" name="q1" value="0"> 1/3</label><br>
-    <label><input type="radio" name="q1" value="1"> 2/4</label><br>
-    <label><input type="radio" name="q1" value="0"> 3/6</label>
+    <p>1️⃣ Une fraction représente :</p>
+    <label>
+      <input type="radio" name="q1" data-correct="true">
+      Une partie d’un tout
+    </label><br>
+    <label>
+      <input type="radio" name="q1">
+      Une multiplication
+    </label>
   </div>
 
   <div class="question">
-    <p>2️⃣ 3/5 sous forme équivalente avec dénominateur 15 est :</p>
-    <label><input type="radio" name="q2" value="1"> 9/15</label><br>
-    <label><input type="radio" name="q2" value="0"> 6/15</label><br>
-    <label><input type="radio" name="q2" value="0"> 5/15</label>
+    <p>2️⃣ Dans la fraction 5/8, le dénominateur est :</p>
+    <label>
+      <input type="radio" name="q2">
+      5
+    </label><br>
+    <label>
+      <input type="radio" name="q2" data-correct="true">
+      8
+    </label>
   </div>
 
   <div class="question">
-    <p>3️⃣ Pour savoir si 2/3 = 4/6, on :</p>
-    <label><input type="radio" name="q3" value="1"> Vérifie le produit en croix</label><br>
-    <label><input type="radio" name="q3" value="0"> Compare les numérateurs uniquement</label><br>
-    <label><input type="radio" name="q3" value="0"> Compare les dénominateurs uniquement</label>
+    <p>3️⃣ La fraction représentant 3 parts sur 10 est :</p>
+    <label>
+      <input type="radio" name="q3" data-correct="true">
+      3/10
+    </label><br>
+    <label>
+      <input type="radio" name="q3">
+      10/3
+    </label>
   </div>
 
-  <button class="btn" onclick="verifierQCM()">Vérifier mes réponses</button>
+  <button class="btn" onclick="verifierQCM('6e-fractions')">
+    Vérifier mes réponses
+  </button>
+
   <p id="qcm-result"></p>
+
 </section>
 
+<!-- ================= FLASHCARDS ================= -->
 <section class="bloc flashcards">
-  <h2>🗂 Flashcards</h2>
-  <div class="flashcard" onclick="this.classList.toggle('show')">
+
+  <h2>🗂 Flashcards – Fractions</h2>
+
+  <div class="flashcard">
     <p>Qu’est-ce qu’une fraction ?</p>
-    <div class="reponse">Un nombre représentant une partie d’un tout, écrit a/b.</div>
+    <div class="reponse">
+      Une fraction représente une partie d’un tout.
+    </div>
   </div>
-  <div class="flashcard" onclick="this.classList.toggle('show')">
-    <p>Comment savoir si deux fractions sont égales ?</p>
-    <div class="reponse">Si le produit en croix est égal : a×d = b×c</div>
+
+  <div class="flashcard">
+    <p>Numérateur</p>
+    <div class="reponse">
+      Nombre de parts prises.
+    </div>
   </div>
-  <div class="flashcard" onclick="this.classList.toggle('show')">
-    <p>1/2 est équivalent à ?</p>
-    <div class="reponse">2/4, 3/6, 4/8…</div>
+
+  <div class="flashcard">
+    <p>Dénominateur</p>
+    <div class="reponse">
+      Nombre total de parts égales.
+    </div>
   </div>
+
 </section>
 
 </main>
@@ -124,17 +147,15 @@
   <p>© 2026 – Maths pour tous</p>
 </footer>
 
+<!-- ================= SCRIPTS GLOBAUX ================= -->
+<script src="../../js/progression.js"></script>
+<script src="../../js/qcm-flashcards.js"></script>
+
 <script>
-  function verifierQCM() {
-    let score = 0;
-    let total = 0;
-    document.querySelectorAll('.question').forEach(q => {
-      total++;
-      const checked = q.querySelector('input[type="radio"]:checked');
-      if(checked && checked.value==="1") score++;
-    });
-    document.getElementById('qcm-result').textContent = `Votre score : ${score} / ${total}`;
-  }
+/* Correction exercices (simple et générique) */
+function toggleCorrection() {
+  document.getElementById("correction").classList.toggle("hidden");
+}
 </script>
 
 </body>
