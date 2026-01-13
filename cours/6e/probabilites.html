@@ -3,16 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>6e – Probabilités</title>
-  <link rel="stylesheet" href="../style.css">
+
+  <!-- Styles globaux -->
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
 <header>
   <h1>Probabilités – 6e</h1>
+  <p>Niveau : 6ème</p>
 </header>
+
+<nav class="breadcrumb">
+  <a href="../../index.html">Accueil</a> →
+  <a href="../../niveaux/6e.html">6ème</a> →
+  Probabilités
+</nav>
 
 <main>
 
+<!-- ================= COURS ================= -->
 <section class="bloc">
   <div class="definition">
     La probabilité d’un événement mesure ses chances de se produire.
@@ -25,19 +35,25 @@
   </div>
 </section>
 
+<!-- ================= QCM ================= -->
 <section class="bloc qcm" data-id="proba-qcm">
-  <h2>QCM</h2>
+  <h2>QCM - Les probabilités</h2>
 
   <p class="question">La probabilité d’un événement impossible est :</p>
-  <label><input type="radio" name="q1" data-correct="true"> 0</label><br>
-  <label><input type="radio" name="q1"> 1</label>
+  <label>
+    <input type="radio" name="q1" data-correct="true"> 0
+  </label><br>
+  <label>
+    <input type="radio" name="q1"> 1
+  </label>
 
   <button class="btn check-qcm">Valider</button>
   <p class="result"></p>
 </section>
 
+<!-- ================= FLASHCARDS ================= -->
 <section class="bloc">
-  <h2>Flashcards</h2>
+  <h2>Flashcards - Probabilités</h2>
 
   <div class="flashcard">
     <div class="question">Probabilité maximale ?</div>
@@ -52,6 +68,18 @@
 
 </main>
 
-<script src="../chapitre.js"></script>
+<footer>
+  <p>© 2026 – Maths pour tous</p>
+</footer>
+
+<!-- ================= SCRIPTS GLOBAUX ================= -->
+<script src="../../js/progression.js"></script>
+<script src="../../js/qcm-flashcards.js"></script>
+
+<script>
+/* Correction exercices (simple et générique) */
+function toggleCorrection() {
+  document.getElementById("correction").classList.toggle("hidden");
+}
 </body>
 </html>
