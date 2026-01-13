@@ -24,55 +24,55 @@
 
 <section class="bloc cours">
   <div class="definition">
-    Un nombre décimal est un nombre avec une partie entière et une partie décimale séparées par une virgule.
+    Un nombre décimal est un nombre qui possède une virgule.
   </div>
 
   <div class="propriete">
-    Les chiffres après la virgule représentent des dixièmes, centièmes, millièmes…
+    La partie avant la virgule est la partie entière.
   </div>
 
   <div class="exemple">
-    3,45 = 3 unités + 4 dixièmes + 5 centièmes
+    3,5 ; 12,04 sont des nombres décimaux.
   </div>
 </section>
 
 <section class="bloc exercices">
   <h2>✏️ Exercices</h2>
   <ol>
-    <li>Écrire 4,7 en lettres.</li>
-    <li>Quel chiffre est au rang des dixièmes dans 8,23 ?</li>
+    <li>Donner un exemple de nombre décimal.</li>
+    <li>Quelle est la partie entière de 7,3 ?</li>
   </ol>
 
-  <button class="btn" onclick="toggleCorrection()">Corrigé</button>
+  <button class="btn" onclick="toggleCorrection()">Voir / cacher le corrigé</button>
   <div id="correction" class="correction hidden">
     <ol>
-      <li>Quatre virgule sept</li>
-      <li>2</li>
+      <li>Exemple : 4,2</li>
+      <li>7</li>
     </ol>
   </div>
 </section>
 
 <section class="bloc qcm">
-  <h2>📝 QCM</h2>
+  <h2>📝 QCM – Nombres décimaux</h2>
 
   <div class="question">
-    <p>1️⃣ Dans 6,3 le chiffre des dixièmes est :</p>
-    <label><input type="radio" name="q1" data-correct="true"> 3</label><br>
-    <label><input type="radio" name="q1"> 6</label>
+    <p>1️⃣ 2,7 est :</p>
+    <label><input type="radio" name="q1" data-correct="true"> un nombre décimal</label><br>
+    <label><input type="radio" name="q1"> un entier</label>
   </div>
 
   <div class="question">
-    <p>2️⃣ Lequel est un nombre décimal ?</p>
-    <label><input type="radio" name="q2"> 12</label><br>
-    <label><input type="radio" name="q2" data-correct="true"> 12,5</label>
+    <p>2️⃣ Partie entière de 5,9 :</p>
+    <label><input type="radio" name="q2" data-correct="true"> 5</label><br>
+    <label><input type="radio" name="q2"> 9</label>
   </div>
 
-  <button class="btn" onclick="verifierQCM('6e-nombres-decimaux')">Vérifier</button>
+  <button class="btn" onclick="verifierQCM('6e-decimaux')">Vérifier mes réponses</button>
   <p id="qcm-result"></p>
 </section>
 
 <section class="bloc flashcards">
-  <h2>🗂 Flashcards</h2>
+  <h2>🗂 Flashcards – Décimaux</h2>
 
   <div class="flashcard">
     <p>Nombre décimal</p>
@@ -80,14 +80,14 @@
   </div>
 
   <div class="flashcard">
-    <p>Dixième</p>
-    <div class="reponse">1/10</div>
+    <p>Partie entière</p>
+    <div class="reponse">Nombre avant la virgule.</div>
   </div>
 </section>
 
 </main>
 
-<footer>© 2026 – Maths pour tous</footer>
+<footer><p>© 2026 – Maths pour tous</p></footer>
 
 <script src="../../js/progression.js"></script>
 <script src="../../js/qcm-flashcards.js"></script>
