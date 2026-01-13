@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Périmètres et aires – 6ème</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header>
+<h1>📏 Périmètres et aires</h1>
+<p>Niveau : 6ème</p>
+<nav class="breadcrumb">
+<a href="../../index.html">🏠 Accueil</a> →
+<a href="../../niveaux/6e.html">6ème</a> →
+Périmètres et aires
+</nav>
+</header>
+<main>
+
+<section class="bloc cours">
+<div class="definition">Le périmètre est la longueur totale du contour d’une figure. L’aire mesure la surface occupée par la figure.</div>
+<div class="propriete">Pour un rectangle : P = 2×(L+l) ; A = L×l. Pour un carré : P = 4×c ; A = c².</div>
+<div class="exemple">Rectangle L=5, l=3 → P=16, A=15.</div>
+</section>
+
+<section class="bloc exercices">
+<ol>
+<li>Calculer le périmètre et l’aire d’un carré de côté 4 cm.</li>
+<li>Calculer le périmètre et l’aire d’un rectangle L=6 cm, l=2 cm.</li>
+</ol>
+<button class="btn" onclick="document.getElementById('correction').classList.toggle('hidden')">Voir / cacher le corrigé</button>
+<div id="correction" class="correction hidden">
+<ol>
+<li>P = 16 cm ; A = 16 cm²</li>
+<li>P = 16 cm ; A = 12 cm²</li>
+</ol>
+</div>
+</section>
+
+<section class="bloc qcm">
+<div class="question">
+<p>1️⃣ Aire d’un carré côté 5 ?</p>
+<label><input type="radio" name="q1" value="1"> 25</label><br>
+<label><input type="radio" name="q1" value="0"> 20</label>
+</div>
+<div class="question">
+<p>2️⃣ Périmètre d’un rectangle L=3, l=4 ?</p>
+<label><input type="radio" name="q2" value="1"> 14</label><br>
+<label><input type="radio" name="q2" value="0"> 12</label>
+</div>
+<button class="btn" onclick="verifierQCM()">Vérifier mes réponses</button>
+<p id="qcm-result"></p>
+</section>
+
+<section class="bloc flashcards">
+<div class="flashcard" onclick="this.classList.toggle('show')">
+<p>Formule périmètre d’un rectangle ?</p>
+<div class="reponse">P = 2×(L+l)</div>
+</div>
+<div class="flashcard" onclick="this.classList.toggle('show')">
+<p>Formule aire d’un carré ?</p>
+<div class="reponse">A = c²</div>
+</div>
+</section>
+
+</main>
+<footer><p>© 2026 – Maths pour tous</p></footer>
+<script>
+function verifierQCM(){let score=0,total=0;document.querySelectorAll('.question').forEach(q=>{total++;const c=q.querySelector('input[type="radio"]:checked');if(c&&c.value==="1")score++;});document.getElementById('qcm-result').textContent=`Votre score : ${score} / ${total}`;}
+</script>
+</body>
+</html>
