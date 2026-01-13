@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nombres décimaux – 6ème</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🔢 Nombres décimaux</h1>
+  <p>Niveau : 6ème</p>
+</header>
+
+<nav class="breadcrumb">
+  <a href="../../index.html">Accueil</a> →
+  <a href="../../niveaux/6e.html">6ème</a> →
+  Nombres décimaux
+</nav>
+
+<main>
+
+<section class="bloc cours">
+  <div class="definition">
+    Un nombre décimal est un nombre avec une partie entière et une partie décimale séparées par une virgule.
+  </div>
+
+  <div class="propriete">
+    Les chiffres après la virgule représentent des dixièmes, centièmes, millièmes…
+  </div>
+
+  <div class="exemple">
+    3,45 = 3 unités + 4 dixièmes + 5 centièmes
+  </div>
+</section>
+
+<section class="bloc exercices">
+  <h2>✏️ Exercices</h2>
+  <ol>
+    <li>Écrire 4,7 en lettres.</li>
+    <li>Quel chiffre est au rang des dixièmes dans 8,23 ?</li>
+  </ol>
+
+  <button class="btn" onclick="toggleCorrection()">Corrigé</button>
+  <div id="correction" class="correction hidden">
+    <ol>
+      <li>Quatre virgule sept</li>
+      <li>2</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bloc qcm">
+  <h2>📝 QCM</h2>
+
+  <div class="question">
+    <p>1️⃣ Dans 6,3 le chiffre des dixièmes est :</p>
+    <label><input type="radio" name="q1" data-correct="true"> 3</label><br>
+    <label><input type="radio" name="q1"> 6</label>
+  </div>
+
+  <div class="question">
+    <p>2️⃣ Lequel est un nombre décimal ?</p>
+    <label><input type="radio" name="q2"> 12</label><br>
+    <label><input type="radio" name="q2" data-correct="true"> 12,5</label>
+  </div>
+
+  <button class="btn" onclick="verifierQCM('6e-nombres-decimaux')">Vérifier</button>
+  <p id="qcm-result"></p>
+</section>
+
+<section class="bloc flashcards">
+  <h2>🗂 Flashcards</h2>
+
+  <div class="flashcard">
+    <p>Nombre décimal</p>
+    <div class="reponse">Nombre avec une virgule.</div>
+  </div>
+
+  <div class="flashcard">
+    <p>Dixième</p>
+    <div class="reponse">1/10</div>
+  </div>
+</section>
+
+</main>
+
+<footer>© 2026 – Maths pour tous</footer>
+
+<script src="../../js/progression.js"></script>
+<script src="../../js/qcm-flashcards.js"></script>
+<script>
+function toggleCorrection(){document.getElementById("correction").classList.toggle("hidden");}
+</script>
+
+</body>
+</html>
