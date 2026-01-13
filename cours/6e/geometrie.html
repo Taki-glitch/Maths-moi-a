@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Géométrie – 6ème</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header>
+<h1>📐 Géométrie</h1>
+<p>Niveau : 6ème</p>
+<nav class="breadcrumb">
+<a href="../../index.html">🏠 Accueil</a> →
+<a href="../../niveaux/6e.html">6ème</a> →
+Géométrie
+</nav>
+</header>
+<main>
+
+<section class="bloc cours">
+<div class="definition">La géométrie étudie les formes, les figures et les relations entre les points, segments, droites et angles.</div>
+<div class="propriete">Les figures peuvent être mesurées avec des longueurs, des périmètres et des angles. Deux triangles semblables ont des angles égaux et des côtés proportionnels.</div>
+<div class="exemple">Triangle ABC avec AB = 3 cm, AC = 4 cm, BC = 5 cm.</div>
+</section>
+
+<section class="bloc exercices">
+<ol>
+<li>Tracer un triangle de côtés 3 cm, 4 cm et 5 cm.</li>
+<li>Mesurer les angles à l’aide d’un rapporteur.</li>
+</ol>
+<button class="btn" onclick="document.getElementById('correction').classList.toggle('hidden')">Voir / cacher le corrigé</button>
+<div id="correction" class="correction hidden">
+<ol>
+<li>Triangle ABC tracé selon les longueurs données.</li>
+<li>Angles mesurés avec le rapporteur.</li>
+</ol>
+</div>
+</section>
+
+<section class="bloc qcm">
+<div class="question">
+<p>1️⃣ Un triangle a-t-il toujours 3 côtés ?</p>
+<label><input type="radio" name="q1" value="1"> Oui</label><br>
+<label><input type="radio" name="q1" value="0"> Non</label>
+</div>
+<div class="question">
+<p>2️⃣ La somme des angles d’un triangle est :</p>
+<label><input type="radio" name="q2" value="1"> 180°</label><br>
+<label><input type="radio" name="q2" value="0"> 90°</label>
+</div>
+<button class="btn" onclick="verifierQCM()">Vérifier mes réponses</button>
+<p id="qcm-result"></p>
+</section>
+
+<section class="bloc flashcards">
+<div class="flashcard" onclick="this.classList.toggle('show')">
+<p>Qu’est-ce qu’un triangle ?</p>
+<div class="reponse">Une figure géométrique avec 3 côtés et 3 angles.</div>
+</div>
+<div class="flashcard" onclick="this.classList.toggle('show')">
+<p>Somme des angles d’un triangle ?</p>
+<div class="reponse">180°</div>
+</div>
+</section>
+
+</main>
+<footer><p>© 2026 – Maths pour tous</p></footer>
+<script>
+function verifierQCM(){let score=0,total=0;document.querySelectorAll('.question').forEach(q=>{total++;const c=q.querySelector('input[type="radio"]:checked');if(c&&c.value==="1")score++;});document.getElementById('qcm-result').textContent=`Votre score : ${score} / ${total}`;}
+</script>
+</body>
+</html>
