@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Probabilités – 6ème</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🎲 Probabilités</h1>
+  <p>Niveau : 6ème</p>
+</header>
+
+<nav class="breadcrumb">
+  <a href="../../index.html">Accueil</a> →
+  <a href="../../niveaux/6e.html">6ème</a> →
+  Probabilités
+</nav>
+
+<main>
+
+<section class="bloc cours">
+  <div class="definition">
+    Les probabilités permettent de mesurer les chances qu’un événement se produise.
+  </div>
+
+  <div class="propriete">
+    La probabilité est toujours comprise entre 0 et 1.
+    <br>
+    Probabilité = nombre de cas favorables ÷ nombre de cas possibles.
+  </div>
+
+  <div class="exemple">
+    En lançant un dé à 6 faces :
+    <br>
+    Probabilité d’obtenir un 6 = 1 ÷ 6
+  </div>
+</section>
+
+<section class="bloc exercices">
+  <h2>✏️ Exercices</h2>
+
+  <ol>
+    <li>Quelle est la probabilité d’obtenir pile avec une pièce ?</li>
+    <li>Quelle est la probabilité d’obtenir un nombre pair avec un dé ?</li>
+  </ol>
+
+  <button class="btn" onclick="toggleCorrection()">Voir / cacher le corrigé</button>
+
+  <div id="correction" class="correction hidden">
+    <ol>
+      <li>1 ÷ 2</li>
+      <li>3 ÷ 6 = 1 ÷ 2</li>
+    </ol>
+  </div>
+</section>
+
+<section class="bloc qcm">
+  <h2>📝 QCM</h2>
+
+  <div class="question">
+    <p>1️⃣ Une probabilité peut-elle être supérieure à 1 ?</p>
+    <label><input type="radio" name="q1" value="0"> Oui</label><br>
+    <label><input type="radio" name="q1" value="1"> Non</label>
+  </div>
+
+  <div class="question">
+    <p>2️⃣ Probabilité d’obtenir face avec une pièce ?</p>
+    <label><input type="radio" name="q2" value="1"> 1/2</label><br>
+    <label><input type="radio" name="q2" value="0"> 2</label>
+  </div>
+
+  <button class="btn" onclick="verifierQCM()">Vérifier mes réponses</button>
+  <p id="qcm-result"></p>
+</section>
+
+<section class="bloc flashcards">
+  <h2>🗂 Flashcards</h2>
+
+  <div class="flashcard" onclick="this.classList.toggle('show')">
+    <p>Définition d’une probabilité</p>
+    <div class="reponse">Mesure des chances qu’un événement se produise.</div>
+  </div>
+
+  <div class="flashcard" onclick="this.classList.toggle('show')">
+    <p>Valeurs possibles d’une probabilité</p>
+    <div class="reponse">Entre 0 et 1</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 – Maths pour tous</p>
+</footer>
+
+<script>
+function toggleCorrection() {
+  document.getElementById("correction").classList.toggle("hidden");
+}
+
+function verifierQCM() {
+  let score = 0;
+  let total = document.querySelectorAll(".question").length;
+
+  document.querySelectorAll(".question").forEach(q => {
+    const checked = q.querySelector("input:checked");
+    if (checked && checked.value === "1") score++;
+  });
+
+  document.getElementById("qcm-result").textContent =
+    `Votre score : ${score} / ${total}`;
+}
+</script>
+
+</body>
+</html>
